@@ -29,9 +29,11 @@ public class LoginHanlder : IRequestHandler<Login, LoginResponse>
         //Valida que no esten vacias
         if(string.IsNullOrEmpty(request.Correo) || string.IsNullOrEmpty(request.Contrasena))
             throw new BadRequestException("Correo y contraseña son obligatorios");
-
+        
+        //Se busca al usuario propietario del correo
         var user = await _context.Usuarios.AsNoTracking().FirstOrDefaultAsync(x => x.Correo == request.Correo);
         
+        //Se compara la contraseña para verificar que sean las mismas
         var contrasena = BCrypt.Net.BCrypt.Verify(request.Contrasena, user.Contrasena) ? user.Contrasena : request.Contrasena;
         
         //Si cumple con las validaciones se procede a autenticar

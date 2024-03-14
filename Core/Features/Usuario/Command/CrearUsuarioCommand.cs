@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Core.Domain.Exceptions;
 using Core.Infraestructure.Persistance;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace Core.Features.Usuario.Command;
 
@@ -35,6 +37,16 @@ public class CrearUsuarioCommandHandler : IRequestHandler<CrearUsuarioCommand>
     
     public async Task<Unit> Handle(CrearUsuarioCommand request, CancellationToken cancellationToken)
     {
+        //Se busca si no existe algun usuario con la cuenta
+        var validar = await _context.Usuarios
+            .AsNoTracking()
+            .FirstOrDefaultAsync(x => x.Correo == request.Correo);
+
+        if (validar != null)
+        {
+            throw new BadRequestException("Error ya existe un usuario con ese correo");
+        }
+        
         var usuario = new Domain.Entities.Usuario()
         {
             Nombre = request.Nombre,

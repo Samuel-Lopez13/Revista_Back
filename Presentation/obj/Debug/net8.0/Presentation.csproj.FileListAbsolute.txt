@@ -78,3 +78,4 @@ D:\Revista\Revista Back\Revista\Presentation\bin\Debug\net8.0\Core.xml
 D:\Revista\Revista Back\Revista\Presentation\obj\Debug\net8.0\Presentation.xml
 D:\Revista\Revista Back\Revista\Presentation\bin\Debug\net8.0\Scrypt.dll
 D:\Revista\Revista Back\Revista\Presentation\bin\Debug\net8.0\BCrypt.Net-Next.dll
+D:\Revista\Revista Back\Revista\Presentation\obj\Debug\net8.0\Presentation.sourcelink.json

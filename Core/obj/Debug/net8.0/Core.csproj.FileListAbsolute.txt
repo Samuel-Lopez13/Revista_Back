@@ -14,3 +14,4 @@ D:\Revista\Revista Back\Revista\Core\obj\Debug\net8.0\Core.genruntimeconfig.cach
 D:\Revista\Revista Back\Revista\Core\obj\Debug\net8.0\ref\Core.dll
 D:\Revista\Revista Back\Revista\Core\bin\Debug\net8.0\Core.xml
 D:\Revista\Revista Back\Revista\Core\obj\Debug\net8.0\Core.xml
+D:\Revista\Revista Back\Revista\Core\obj\Debug\net8.0\Core.sourcelink.json
